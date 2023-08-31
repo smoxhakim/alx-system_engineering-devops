@@ -1,2 +1,2 @@
 #!bin/bash
-this is  permissions the project
+this is  permissions  project
