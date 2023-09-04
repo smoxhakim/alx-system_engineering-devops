@@ -1,2 +1,3 @@
 #!/bin/bash
-find . -name '.*' -type f -empty -exec sh -c 'echo "${0##*/}"' {} \; -o -type d -empty -exec sh -c 'echo "${0##*/}"' {} \; ; echo
+find . -empty -print | sed 's/^\.\///'
+
