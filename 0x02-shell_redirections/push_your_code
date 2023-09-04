@@ -1,0 +1,6 @@
+#this script to push your code on GitHub
+#you need to run the clone_to_GitHub script first 
+
+git add .
+git commit -m "$1"
+git push
