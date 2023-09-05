@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -n -e ".*" | grep -v -e ":2$"
+head -n $(($(wc -l < input.txt) / 2 + 1)) input.txt | tail -n +1
