@@ -1,0 +1,2 @@
+#!/bin/bash
+grep -n -e ".*" | grep -v -e ":2$"
