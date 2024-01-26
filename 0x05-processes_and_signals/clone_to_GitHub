@@ -1,0 +1,16 @@
+#this script to clone your code te GitHub
+
+
+echo "please enter your token here:  "
+read token
+echo " please enter your User Name here:  "
+read name
+echo "please enter your email here:  "
+read email
+echo  "please enter your Repository Name here:  "
+read repo
+
+cd /
+git clone https://$token@github.com/$name/$repo.git
+git config --global user.email "$email"
+git config --global user.name "$name"
