@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-
 # Check if the number of parameters is less than 4
+
 if [ "$#" -ne 4 ]; then
   echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
   exit 1
@@ -27,12 +27,6 @@ PATH_TO_FILE=$1
 IP=$2
 USERNAME=$3
 ATH_TO_SSH_KEY=$4
-
-# Check if the local file exists
-if [ ! -f "$PATH_TO_FILE" ]; then
-    echo "Error: File '$PATH_TO_FILE' does not exist."
-    exit 1
-fi
 
 # Transfer the file using SCP
 if [ $# -eq 4 ]; then
