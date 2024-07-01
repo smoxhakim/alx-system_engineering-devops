@@ -11,9 +11,9 @@ IP=$2
 USERNAME=$3
 PATH_TO_SSH_KEY=$4
 
-scp -i "$PATH_TO_SSH_KEY" -o StrictHostKeyChecking=no "$PATH_TO_FILE" "$USERNAME@$IP:~/"
+# scp -i "$PATH_TO_SSH_KEY" -o StrictHostKeyChecking=no "$PATH_TO_FILE" "$USERNAME@$IP:~/"
 if [ $# -eq 4 ]; then
     scp -o StrictHostKeyChecking=no "$PATH_TO_FILE" "$USERNAME@$IP":~/
 else
-    scp -o StrictHostKeyChecking=no -i "$ATH_TO_SSH_KEY" "$PATH_TO_FILE" "$USERNAME@$IP":~/
+    scp -o StrictHostKeyChecking=no -i "$PATH_TO_SSH_KEY" "$PATH_TO_FILE" "$USERNAME@$IP":~/
 fi
