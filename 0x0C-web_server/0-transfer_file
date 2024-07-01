@@ -1,20 +1,36 @@
 #!/usr/bin/env bash
 # Check if the number of parameters is less than 4
 
-if [ $# -lt 4 ]; then
-    echo "Usage: ${0#./} PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
-    exit 1
+if [ "$#" -ne 4 ]; then
+  echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+  exit 1
 fi
 
-# Assign parameters to variables
-PATH_TO_FILE=$1
-IP=$2
-USERNAME=$3
-ATH_TO_SSH_KEY=$4
+# # Assign parameters to variables
+# PATH_TO_FILE=$1
+# IP=$2
+# USERNAME=$3
+# PATH_TO_SSH_KEY=$4
 
-# Transfer the file using SCP
-if [ $# -eq 4 ]; then
-    scp -o StrictHostKeyChecking=no "$PATH_TO_FILE" "$USERNAME@$IP":~/
-else
-    scp -o StrictHostKeyChecking=no -i "$ATH_TO_SSH_KEY" "$PATH_TO_FILE" "$USERNAME@$IP":~/
-fi
+# # Transfer the file using scp with strict host key checking disabled
+# scp -i "$PATH_TO_SSH_KEY" -o StrictHostKeyChecking=no "$PATH_TO_FILE" "$USERNAME@$IP:~/"
+
+
+
+# if [ $# -lt 4 ]; then
+#     echo "Usage: ${0#./} PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+#     exit 1
+# fi
+
+# # Assign parameters to variables
+# PATH_TO_FILE=$1
+# IP=$2
+# USERNAME=$3
+# ATH_TO_SSH_KEY=$4
+
+# # Transfer the file using SCP
+# if [ $# -eq 4 ]; then
+#     scp -o StrictHostKeyChecking=no "$PATH_TO_FILE" "$USERNAME@$IP":~/
+# else
+#     scp -o StrictHostKeyChecking=no -i "$ATH_TO_SSH_KEY" "$PATH_TO_FILE" "$USERNAME@$IP":~/
+# fi
