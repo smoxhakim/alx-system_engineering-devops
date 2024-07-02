@@ -1,11 +1,19 @@
 #!/usr/bin/env bash
-#!/usr/bin/env bash
-#Install nginx web server and set default page
+#Install nginx web server and set redirecting to another page
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
+
 sudo sh -c 'echo "Hello World!" > /var/www/html/index.nginx-debian.html'
-sudo sed -i '/^}$/i \ \n\tlocation \/redirect_me {return 301 https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4;}' /etc/nginx/sites-available/default
-sudo sed -i '/^}$/i \ \n\tlocation @404 {return 404 "Ceci n'\''est pas une page\\n";}' /etc/nginx/sites-available/default
-sudo sed -i 's/=404/@404/g' /etc/nginx/sites-available/default
-sudo service nginx start
+
+replacemant_string="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;"
+
+sudo sed -i "s/server_name _;/$replacemant_string/" /etc/nginx/sites-available/default
+
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+new_404_string="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
+
+sudo sed -i "s/listen 80 default_server;/$new_404_string/" /etc/nginx/sites-enabled/default
+
+
+sudo service nginx restart
