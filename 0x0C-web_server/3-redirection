@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Install nginx web server and set default page
+#Install nginx web server and set redirecting to another page
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
