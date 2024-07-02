@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Install nginx web server and set redirecting to another page
+#Configure Nginx server to have a custom 404 page that contains the string 'Ceci n'est pas une page'
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
