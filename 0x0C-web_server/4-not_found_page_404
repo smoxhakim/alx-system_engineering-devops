@@ -15,5 +15,4 @@ new_404_string="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocat
 
 sudo sed -i "s/listen 80 default_server;/$new_404_string/" /etc/nginx/sites-enabled/default
 
-
 sudo service nginx restart
