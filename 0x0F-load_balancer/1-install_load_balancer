@@ -6,14 +6,15 @@
 sudo apt -y update
 sudo apt -y install haproxy
 
-echo 'frontend all-as.tech
+sudo echo '
+frontend all-as.tech
         bind 0:80
         default_backend web_servers
 
-    backend web_servers
-            balance roundrobin
-            server 529619-web-01 100.26.250.129:80
-            server 529619-web-02 34.207.222.23:80
-    ' >> /etc/haproxy/haproxy.cfg
+backend web_servers
+        balance roundrobin
+        server 529619-web-01 100.26.250.129:80
+        server 529619-web-02 34.207.222.23:80
+' | sudo tee -a /etc/haproxy/haproxy.cfg
 
 sudo service haproxy restart
