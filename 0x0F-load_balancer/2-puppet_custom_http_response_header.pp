@@ -1,3 +1,5 @@
+#Puppet code
+
 exec { 'command':
   command  => 'apt-get -y update;
   apt-get -y install nginx;
