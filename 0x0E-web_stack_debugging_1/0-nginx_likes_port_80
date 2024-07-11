@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#I find you and I WILL F** FIX YOU (^-^)
+#I find you and I WILL FIX YOU (^_^)
 
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
