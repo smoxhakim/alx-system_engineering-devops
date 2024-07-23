@@ -13,4 +13,9 @@ sed -i 's/^\(user\s*\)nginx;/\1nginx;\n\ndaemon off;\n\nmaster_process off;/' /e
 sed -i 's/listen\s*80;/listen 0.0.0.0:8080;/' /etc/nginx/sites-available/default
 
 sudo -u nginx nginx
-ps auxff | grep nginx
+if pgrep -u nginx nginx > /dev/null
+then
+    echo "Nginx is running as nginx user"
+else
+    echo "Nginx is not running as nginx user"
+fi
