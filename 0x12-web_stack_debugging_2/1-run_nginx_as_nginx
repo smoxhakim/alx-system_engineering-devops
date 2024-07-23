@@ -3,14 +3,13 @@
 
 service nginx stop
 
-sed -i 's/#user www-data/user nginx/' /etc/nginx/nginx.conf
+chown nginx:nginx /etc/nginx/nginx.conf
+
+chmod 644 /etc/nginx/nginx.conf
+
 sed -i 's/80/8080/g' /etc/nginx/sites-available/default
 
-chown -R nginx:nginx /var/log/nginx
-chown -R nginx:nginx /var/lib/nginx
-
-sed -i 's/^\(user\s*\)nginx;/\1nginx;\n\ndaemon off;\n\nmaster_process off;/' /etc/nginx/nginx.conf
-sed -i 's/listen\s*80;/listen 0.0.0.0:8080;/' /etc/nginx/sites-available/default
+sudo -u nginx service nginx start
 
 sudo -u nginx nginx
 if pgrep -u nginx nginx > /dev/null
