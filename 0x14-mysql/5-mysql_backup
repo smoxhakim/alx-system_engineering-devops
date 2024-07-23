@@ -1,1 +1,26 @@
 #!/usr/bin/env bash
+# MySQL backup
+
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <mysql_password>"
+    exit 1
+fi
+
+MYSQL_PASSWORD=$1
+DATE=$(date +"%d-%m-%Y")
+DUMP_FILE="backup.sql"
+ARCHIVE_NAME="${DATE}.tar.gz"
+
+if ! mysqldump -u root -p"${MYSQL_PASSWORD}" --all-databases > "${DUMP_FILE}"; then
+    echo "MySQL dump failed"
+    exit 1
+fi
+
+if ! tar -czvf "${ARCHIVE_NAME}" "${DUMP_FILE}"; then
+    echo "Creating archive failed"
+    exit 1
+fi
+
+rm "${DUMP_FILE}"
+
+echo "Backup completed successfully: ${ARCHIVE_NAME}"
