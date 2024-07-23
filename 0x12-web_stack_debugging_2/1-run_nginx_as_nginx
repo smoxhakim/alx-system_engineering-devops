@@ -11,10 +11,3 @@ sed -i 's/80/8080/g' /etc/nginx/sites-available/default
 
 sudo -u nginx service nginx start
 
-sudo -u nginx nginx
-if pgrep -u nginx nginx > /dev/null
-then
-    echo "Nginx is running as nginx user"
-else
-    echo "Nginx is not running as nginx user"
-fi
