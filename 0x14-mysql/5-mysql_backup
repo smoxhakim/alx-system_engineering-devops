@@ -21,6 +21,4 @@ if ! tar -czvf "${ARCHIVE_NAME}" "${DUMP_FILE}"; then
     exit 1
 fi
 
-rm "${DUMP_FILE}"
-
 echo "Backup completed successfully: ${ARCHIVE_NAME}"
