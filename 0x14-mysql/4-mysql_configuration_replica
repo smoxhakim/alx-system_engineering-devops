@@ -1,1 +1,7 @@
 #!/usr/bin/env bash
+# 4-mysql_configuration_replica (on web-02)
+[mysqld]
+server-id               = 2
+relay-log               = /var/log/mysql/mysql-relay-bin.log
+log_bin                 = /var/log/mysql/mysql-bin.log
+binlog_do_db            = tyrell_corp

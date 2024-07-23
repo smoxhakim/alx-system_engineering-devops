@@ -1,1 +1,7 @@
 #!/usr/bin/env bash
+# 4-mysql_configuration_primary (on web-01)
+[mysqld]
+server-id               = 1
+log_bin                 = /var/log/mysql/mysql-bin.log
+binlog_do_db            = tyrell_corp
+#bind-address           = 127.0.0.1
