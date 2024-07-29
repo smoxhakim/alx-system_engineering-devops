@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-"""using this REST API, for a given employee ID"""
 import requests
 import sys
+"""using this REST API, for a given employee ID"""
+
 
 employee_id = int(sys.argv[1])
 user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
