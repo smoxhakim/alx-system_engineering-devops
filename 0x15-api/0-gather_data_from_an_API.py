@@ -12,10 +12,10 @@ if __name__ == "__main__":
                                 .format(employee_id))
     todos_response = requests.get("https://jsonplaceholder.typicode.com/todos")
 
-    if user_respons.status_code != 200 or todos_response.status_code != 200:
+    """if user_respons.status_code != 200 or todos_response.status_code != 200:
         print("Error fetching data from the API")
         sys.exit(1)
-
+    """
     user = user_respons.json()
     todos = todos_response.json()
     employee_name = user['name']
