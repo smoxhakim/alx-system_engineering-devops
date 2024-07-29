@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-import sys
+"""model doc"""
 import requests
+import sys
 
 """using this REST API, for a given employee ID"""
 
