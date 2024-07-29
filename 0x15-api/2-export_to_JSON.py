@@ -24,7 +24,7 @@ if __name__ == "__main__":
             {
                 "task": task['title'],
                 "completed": task['completed'],
-                "username": username
+                "username": employee_name
             }
             for task in employee_tasks
         ]
