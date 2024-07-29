@@ -15,11 +15,9 @@ if __name__ == "__main__":
 
     user = user_respons.json()
     todos = todos_response.json()
-    employee_name = user['name']
-    employee_tasks = [task for task in todos if task['userId'] == employee_id]
 
-    total_tasks = len(employee_tasks)
-    completed_tasks = [task for task in employee_tasks if task['completed']]
+    employee_name = user['username']
+    employee_tasks = [task for task in todos if task['userId'] == employee_id]
 
     filename = f"{employee_id}.csv"
     with open(filename, mode='w', newline='') as csvfile:
