@@ -5,11 +5,8 @@ import sys
 
 
 employee_id = int(sys.argv[1])
-user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-todos_url = "https://jsonplaceholder.typicode.com/todos"
-
-user_response = requests.get(user_url)
-todos_response = requests.get(todos_url)
+user_response = requests.get("https://jsonplaceholder.typicode.com/users/{employee_id}")
+todos_response = requests.get("https://jsonplaceholder.typicode.com/todos")
 
 if user_response.status_code != 200 or todos_response.status_code != 200:
     print("Error fetching data from the API")
