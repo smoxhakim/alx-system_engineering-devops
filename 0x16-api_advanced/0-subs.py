@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-
-#!/usr/bin/python3
 """
 this doc for module
 """
@@ -18,4 +16,3 @@ def number_of_subscribers(subreddit):
         return data["data"]["subscribers"]
     else:
         return 0
-
