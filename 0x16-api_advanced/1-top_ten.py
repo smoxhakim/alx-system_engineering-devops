@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """task 1"""
+import requests
 
 
 def top_ten(subreddit):
